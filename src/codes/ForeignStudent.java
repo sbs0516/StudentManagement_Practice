@@ -1,26 +1,29 @@
 package codes;
 
-public class ForeignStudent extends StudentData {
+public class ForeignStudent extends Student {
 	
 	int engScore;
 	
 	
+
 	public ForeignStudent() {
 		super();
 	}
 
-	
 
-	public ForeignStudent(int engScore) {
-		super();
+
+	public ForeignStudent(String name, int birthYear, boolean isMale, String phoneNum, int korScore, int mathScore, int engScore) {
+		super(name, birthYear, isMale, phoneNum, korScore, mathScore);
+		
 		this.engScore = engScore;
 	}
 
 
+
 	@Override
-	int calcAvg(int kor, int math) {
+	int calcAvg() {
 		
-		return (super.korScore + super.mathScore + this.engScore) / 3;
+		return (this.korScore + this.mathScore + this.engScore) / 3;
 	}
 
 }
